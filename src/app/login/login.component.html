@@ -1,0 +1,84 @@
+<div class="parent" *ngIf="pageType ==='register'">
+    <div class="child">
+      <div class="row g-3">
+        <h4>
+          Sign Up
+        </h4>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" [(ngModel)]="signInObj.email" required>
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label"> create Password</label>
+          <input type="password" class="form-control" [(ngModel)]="signInObj.password" required>
+        </div>
+  
+  
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label">Date of birth</label>
+          <input type="date" class="form-control" [(ngModel)]="signInObj.birthday" required>
+        </div>
+  
+  
+  
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary" (click)="newUser()"> Sign in</button>
+        </div>
+        <div class="col-12">
+          Already a member ?<button (click)="goToLogin()" class="btn btn-link">
+            Login here</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--login page-->
+  <div class="parent" *ngIf="pageType==='login'">
+    <div class="child">
+      <div class="row g-3">
+        <h4>
+          Login
+        </h4>
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label"> User Name</label>
+          <input type="email" class="form-control" [(ngModel)]="signInObj.email" placeholder="email">
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label"> Password</label>
+          <input type="password" class="form-control" [(ngModel)]="signInObj.password">
+        </div>
+        <div class="col-12">
+          <div>
+            <a href="#">forgot password ?
+  
+            </a>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox">
+            <label class="form-check-label">
+              Remember me
+            </label>
+          </div>
+        </div>
+        <div class="col-12">
+          <button  type="submit" class="btn btn-primary" (click)="login()">Login</button>
+          
+
+          <div style=color:red>
+            {{error}}
+          </div>
+          
+        </div>
+        <div class="col-12">
+          Dont have an account ?<button (click)="toRegister()" class="btn btn-link">
+            sign in now</button>
+        </div>
+  
+  
+      </div>
+  
+    </div>
+  
+  
+  </div>
